@@ -16,7 +16,9 @@ io.on('connection', (socket) => {
   console.log('Nouvelle connexion');
 
   socket.on('fetchRandomWords', () => {
-    socket.emit('randomWords', words);
+    const randomIndex = Math.floor(Math.random() * words.length);
+    const randomWord = words[randomIndex];
+    socket.emit('randomWords', randomWord);
   });
 
   socket.on('disconnect', () => {
