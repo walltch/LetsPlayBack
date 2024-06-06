@@ -1,7 +1,7 @@
 import express from 'express';
 import http from 'http';
 import { Server } from 'socket.io';
-import words from './words';
+import words from './data.json' assert { type: 'json' };
 
 const app = express();
 const server = http.createServer(app);
